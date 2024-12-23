@@ -15,23 +15,20 @@ class CoffeeOrderBoard {
         orders.add(order);
     }
 
-    public Order deliver() {
+    public void deliver() {
         if (orders.isEmpty()) {
             System.out.println("No orders to deliver.");
-            return null;
         }
-        return orders.remove(0);
     }
 
 
-    public Order deliver(int orderNumber) {
+    public void deliver(int orderNumber) {
         for (int i = 0; i < orders.size(); i++) {
             if (orders.get(i).getNumber() == orderNumber) {
-                return orders.remove(i);
+                orders.remove(i);
             }
         }
         System.out.println("Order number " + orderNumber + " not found.");
-        return null;
     }
 
 
