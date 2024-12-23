@@ -25,16 +25,15 @@ class CoffeeOrderBoard {
 
 
     public Order deliver(int orderNumber) {
-        for (Iterator<Order> iterator = orders.iterator(); iterator.hasNext();) {
-            Order order = iterator.next();
-            if (order.getNumber() == orderNumber) {
-                iterator.remove();
-                return order;
+        for (int i = 0; i < orders.size(); i++) {
+            if (orders.get(i).getNumber() == orderNumber) {
+                return orders.remove(i);
             }
         }
         System.out.println("Order number " + orderNumber + " not found.");
         return null;
     }
+
 
 
     public void draw() {
